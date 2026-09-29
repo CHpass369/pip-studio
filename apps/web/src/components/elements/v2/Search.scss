@@ -1,0 +1,23 @@
+.search-container {
+  margin: 0 5px;
+
+  input.search-input-text-box {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: hsla(0, 0%, 0%, 0.342);
+    border: none;
+    border-radius: 4px;
+    transition: all ease-in-out .5s;
+    color: #ccc;
+    font-size: 16px;
+  }
+
+  .search-input-text-box:hover, .search-input-text-box:focus {
+    box-shadow: 0 0 1em #00000013;
+  }
+
+  .search-input-text-box:focus {
+    outline: none;
+    background-color: #000000ae;
+  }
+}

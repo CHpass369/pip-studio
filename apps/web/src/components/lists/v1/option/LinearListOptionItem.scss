@@ -1,0 +1,20 @@
+
+.linear-list-options-item {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  .details {
+    flex: 1;
+  }
+  .options {
+    margin: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  p {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.369);
+  }
+}

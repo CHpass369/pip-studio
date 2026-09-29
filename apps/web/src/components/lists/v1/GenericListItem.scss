@@ -1,0 +1,28 @@
+.generic-list-item {
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  .generic-text {
+    padding-top: 7px;
+    font-size: 20px;
+  }
+  .generic-item {
+    flex: 1;
+  }
+  .generic-input {
+    width: 100px;
+    font-size: 13px;
+    padding-top: 0px;
+  }
+  .generic-number {
+    width: 100px;
+    font-size: 13px;
+    padding-top: 0px;
+    margin-right: 5px;
+    input {
+      width: 98%;
+    }
+  }
+}

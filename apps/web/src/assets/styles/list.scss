@@ -1,0 +1,41 @@
+/* list-item on select event */
+.on-select {
+  background: rgba(123, 112, 112, 0.376) !important;
+}
+/* list select item */
+.list-item:hover, .list-item-select {
+  background-color: rgba(255, 255, 255, 0.137); 
+}
+
+.report-history-list {
+  // font-size: 1.2em;
+  // margin-bottom: 10px;
+
+  .report-list-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    .center {
+      text-align: center;
+    }
+    .right {
+      text-align: right;
+    }
+    .list-gap {
+      gap: 8px;
+    }
+  }
+  .report-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.137);
+  }
+
+  .prices-list-separator {
+    background-color: rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .prices-diff {
+    color: red;
+    font-weight: bold;
+  }
+}

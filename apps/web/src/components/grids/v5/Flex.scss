@@ -1,0 +1,64 @@
+.grid-5-row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+.grid-5-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.grid-5-flex {
+  overflow-y: auto;
+  display: none;
+}
+.grid-5-start {
+  text-align: start;
+}
+.grid-5-center {
+  text-align: center;
+}
+.grid-5-end {
+  text-align: end;
+  gap: 16px;
+}
+.grid-5-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.grid-5-buttons {
+  margin: 5px 0px;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.grid-start {
+  text-align: start;
+}
+.grid-center {
+  text-align: center;
+}
+.grid-end {
+  text-align: end;
+  gap: 16px;
+}
+@media only print, screen and (max-width: 768px) {
+  .grid-5-flex-mobile {
+    display: block;
+  }
+}
+@media only print, screen and (min-width: 769px) and (max-width: 1008px) {
+  .grid-5-flex-computer {
+    display: block;
+  }
+}
+@media only print, screen and (min-width: 1008px) {
+  .grid-5-flex-screen {
+    display: block;
+  }
+}

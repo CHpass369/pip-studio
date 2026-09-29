@@ -1,0 +1,192 @@
+.cobra-report {
+  color: var(--report-color, #1a1a1a);
+  background-color: #ffffff;
+  font-family: var(--report-font-family, Arial, Helvetica, sans-serif);
+  font-size: var(--report-font-size, inherit);
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .info-table {
+    width: 100%;
+     
+    > p {
+      text-align: center;
+      color: #4d4d4d;
+      margin: 0 0 12px;
+      font-size: 13px;
+    }
+
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      margin: 0 0 4px;
+      color: #000000;
+    }
+    table {
+      width: 100%;
+      border: 1px solid #d9d9d9;
+      border-collapse: collapse;
+    }
+    td, th {
+      padding: 4px 6px;
+    }
+    
+    thead td, thead th {
+      background-color: var(--report-table-header-color, #e6e6e6);
+      color: #1a1a1a;
+      font-weight: bold;
+      text-align: left;
+      border-bottom: 2px solid #808080;
+    }
+  }
+
+  .content-table {
+    width: 100%;
+   
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      border: 1px solid #b3b3b3;
+      padding: 4px 6px;
+    }
+    
+    thead td, thead th {
+      background-color: var(--report-table-header-color, #e6e6e6);
+      color: #1a1a1a;
+      font-weight: bold;
+      text-align: left;
+      border-bottom: 2px solid #808080;
+    }
+
+    .module-row {
+      background-color: var(--report-modules-color, #d9d9d9);
+      font-weight: bold;
+    }
+
+    .item-row {
+      background-color: #ffffff;
+      font-weight: bold;
+    }
+
+    .resource-row {
+      background-color: #f5f5f5;
+      color: #333333;
+    }
+
+    .total-row {
+      background-color: var(--report-total-color, #bfbfbf);
+      font-weight: bold;
+      border-top: 2px solid #808080;
+    }
+
+    .section-title {
+      background-color: #e6e6e6;
+      font-weight: bold;
+      padding: 8px;
+    }
+
+    .indent {
+      padding-left: 20px;
+    }
+
+    .no-border {
+      border: none;
+    }
+
+    .schedule-report__module {
+      margin-bottom: 16px;
+    }
+
+    .schedule-report__empty {
+      color: #4d4d4d;
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+
+    .schedule-report__grid {
+      table-layout: fixed;
+
+      th, td {
+        padding: 2px;
+        text-align: center;
+      }
+    }
+
+    .schedule-report__name-col {
+      width: 180px;
+      text-align: left !important;
+      font-size: 11px;
+    }
+
+
+    .schedule-report__day-header {
+      font-size: 9px;
+      line-height: 1.2;
+      width: 16px;
+    }
+
+    .schedule-report__day-num {
+      display: block;
+      color: #666666;
+      font-weight: normal;
+    }
+
+    .schedule-report__cell {
+      height: 16px;
+    }
+
+    .schedule-report__cell--active {
+      background-color: #808080;
+    }
+
+    .schedule-report__cell--critical {
+      background-color: #dc2626;
+    }
+  }
+}
+
+@media print {
+  .cobra-report {
+    padding: 0;
+  }
+
+  .page, .page-break {
+    break-after: page;
+  }
+
+  .pagebreak {
+    clear: both;
+    min-height: 1px;
+    page-break-after: always;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .cobra-print-area, .cobra-print-area * {
+    visibility: visible;
+  }
+
+  .cobra-print-area {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    margin: 0;
+  }
+}

@@ -1,0 +1,47 @@
+.grid-row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.grid-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.grid-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.grid-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.grid-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.grid-flex {
+  overflow-y: auto;
+  display: none;
+}
+@media only print, screen and (max-width: 768px) {
+  .grid-flex-mobile {
+    display: block;
+  }
+}
+@media only print, screen and (min-width: 769px) and (max-width: 1008px) {
+  .grid-flex-computer {
+    display: block;
+  }
+}
+@media only print, screen and (min-width: 1008px) {
+  .grid-flex-screen {
+    display: block;
+  }
+}

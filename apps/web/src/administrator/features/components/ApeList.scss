@@ -1,0 +1,31 @@
+.ape-List {
+  margin: 20px;
+  .list-item {
+    // background-color: rgba(0, 0, 0, 0.2); 
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    .index-counter {
+      width: 40px;
+      flex-shrink: 0;
+    }
+    .text {
+      flex-shrink: 0;
+    }
+    .title {
+      font-size: 1.3em;
+      flex-grow: 1;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .sub-title {
+      flex-grow: 1;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .list-item-efects:hover {
+    background-color: rgba(255, 255, 255, 0.137); 
+  }
+
+}

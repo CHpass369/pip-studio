@@ -1,0 +1,41 @@
+{
+  "name": "server-constructor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "serve": "nodemon --exec tsx src/index.ts",
+    "test": "nodemon --exec \"tsx --inspect\" src/index.ts",
+    "start": "NODE_ENV=production tsx src/index.ts",
+    "start:dist": "NODE_ENV=production tsx dist/index.js",
+    "build": "gulp build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "apps-generic": "2.0.5",
+    "apps-logger": "2.0.1",
+    "apps-mqtt": "2.0.1",
+    "apps-static-files": "2.0.1",
+    "apps-system": "2.0.2",
+    "express": "^4.17.1",
+    "log4js": "^6.1.0",
+    "moment": "^2.29.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.25",
+    "@types/glob": "^8.1.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongodb": "^3.6.20",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^22.10.0",
+    "@types/uuid": "^8.3.4",
+    "gulp": "^5.0.1",
+    "gulp-javascript-obfuscator": "^1.1.6",
+    "gulp-terser": "^2.1.0",
+    "nodemon": "^3.1.0"
+  }
+}

@@ -1,0 +1,29 @@
+.grid-3-row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+.grid-3-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.grid-3-flex {
+  overflow-y: auto;
+  display: none;
+  display: block;
+}
+.grid-3-center {
+  text-align: center;
+}
+.grid-3-end {
+  text-align: end;
+}
+// .grid-3-start {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-start;
+//   margin-bottom: 10px;
+// }

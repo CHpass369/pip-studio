@@ -1,0 +1,18 @@
+.list-chip {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: row;
+  .chip {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 19px;
+    color: rgb(255, 255, 255);
+    margin-right: 10px;
+    padding: 5px 10px;
+  }
+  .on-chip-select {
+    background: rgba(253, 253, 253, 0.15);
+  }
+}

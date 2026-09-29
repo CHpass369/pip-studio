@@ -1,0 +1,30 @@
+.h-toolbar-container {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.h-session-container {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.h-toolbar-button {
+  color: rgb(134, 200, 151);
+  font-size: 20px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.h-toolbar-title {
+  padding: 8px;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+.h-toolbar-cover {
+  flex-shrink: 0;
+}
+.h-toolbar-flex {
+  flex-grow: 1;
+  flex-shrink: 0;
+}

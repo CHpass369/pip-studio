@@ -1,0 +1,24 @@
+.projects-overview-map {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+}
+.projects-overview-map__hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.projects-overview-map__tooltip {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+}
+.projects-overview-map--empty {
+  padding: 20px;
+  border: 1px dashed rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}

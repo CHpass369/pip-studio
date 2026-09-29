@@ -1,0 +1,28 @@
+.h-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.h-content {
+  overflow-y: auto;
+  flex: 1;
+}
+.h-flex {
+  overflow-y: auto;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .h-flex-mobile {
+    display: block;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1008px) {
+  .h-flex-computer {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1008px) {
+  .h-flex-screen {
+    display: block;
+  }
+}

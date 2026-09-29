@@ -1,0 +1,28 @@
+@import './app.scss';
+@import './form.scss';
+@import './list.scss';
+
+body {
+  font-family: BlinkMacSystemFont, 'questrial' !important;
+}
+
+@font-face {
+  font-family: "questrial";
+  src: local("Questrial"), url("../fonts/questrial/Questrial-Regular.ttf");
+  // font-weight: bold;
+}
+
+@font-face {
+  font-family: "oswald";
+  src: local("oswald"), url("../fonts/oswald/static/Oswald-Medium.ttf");
+  // font-weight: bold;
+}
+
+@font-face {
+  font-family: "inter";
+  // src: local("inter"), url("../fonts/inter/static/Inter_18pt-Thin.ttf");
+  // src: local("inter"), url("../fonts/inter/static/Inter_24pt-Regular.ttf");
+  src: local("inter"), url("../fonts/inter/static/Inter_24pt-Regular.ttf");
+  font-weight: bold;
+  // font-weight: 400;
+}

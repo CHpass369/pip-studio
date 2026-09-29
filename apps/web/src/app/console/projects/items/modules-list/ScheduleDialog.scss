@@ -1,0 +1,389 @@
+/* ============================================================
+   ScheduleDialog — Cronograma de Ejecución
+   ============================================================ */
+
+/* --- Dialog Paper --- */
+.schedule-dialog-paper {
+  width: 95vw;
+  max-width: 95vw !important;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: #1a1d23;
+  color: #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Title bar --- */
+.schedule-dialog__title {
+  background: linear-gradient(135deg, #1e2330 0%, #252b3b 100%);
+  border-bottom: 1px solid #2d3548;
+  padding: 16px 24px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .MuiDialogTitle-root & {
+    padding: 0;
+  }
+}
+
+.schedule-dialog__title-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #a5b4fc;
+  letter-spacing: 0.03em;
+}
+
+.schedule-dialog__global-dates {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  /* MUI TextField overrides for dark theme */
+  .MuiInputBase-root {
+    background: #1a1d23;
+    color: #e2e8f0;
+    border-radius: 6px;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #3a4260 !important;
+  }
+
+  .MuiInputLabel-root {
+    color: #94a3b8;
+  }
+
+  input[type='date']::-webkit-calendar-picker-indicator {
+    filter: invert(1) opacity(0.6);
+  }
+}
+
+.schedule-dialog__global-summary {
+  font-size: 0.8rem;
+  color: #64748b;
+  background: #252b3b;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #3a4260;
+}
+
+.schedule-dialog__content {
+  flex: 1;
+  overflow: hidden !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-dialog__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   Grid Wrapper — Scrollable container
+   ============================================================ */
+.schedule-grid-wrapper {
+  overflow: auto;
+  flex: 1;
+  padding: 0;
+
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #1a1d23;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #3a4260;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-corner {
+    background: #1a1d23;
+  }
+}
+
+/* ============================================================
+   Grid Table
+   ============================================================ */
+.schedule-grid {
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  min-width: 100%;
+
+  th,
+  td {
+    border: 1px solid #2d3548;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+/* --- Fixed label columns (left) --- */
+.schedule-grid__label-col {
+  position: sticky;
+  background: #1e2330;
+  z-index: 2;
+  padding: 6px 8px;
+  text-align: left;
+
+  /* Ítem/Construcción: the only wide column. The rest are hard-coded —
+     numeric inputs (offset, duration) are 50px, dates are 150px. */
+  &:nth-child(1) { left: 0;     width: 220px; min-width: 220px; max-width: 220px; }
+  &:nth-child(2) { left: 220px; width: 50px;  min-width: 50px;  max-width: 50px;  padding: 6px 2px; text-align: center; }
+  &:nth-child(3) { left: 270px; width: 150px; min-width: 150px; max-width: 150px; }
+  &:nth-child(4) { left: 420px; width: 50px;  min-width: 50px;  max-width: 50px;  padding: 6px 2px; text-align: center; }
+  &:nth-child(5) { left: 470px; width: 150px; min-width: 150px; max-width: 150px; }
+  &:nth-child(6) { left: 620px; width: 60px;  min-width: 60px;  max-width: 60px; }
+  &:nth-child(7) { left: 680px; width: 56px;  min-width: 56px;  max-width: 56px; text-align: center; }
+}
+
+.schedule-grid__label-col--header {
+  background: #252b3b;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 3;
+}
+
+/* --- Month header --- */
+.schedule-grid__month-header {
+  background: #252b3b;
+  color: #a5b4fc;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 8px 4px;
+  border-bottom: 2px solid #4f46e5;
+  letter-spacing: 0.04em;
+}
+
+/* --- Week header --- */
+.schedule-grid__week-header {
+  background: #1e2330;
+  color: #64748b;
+  font-size: 0.7rem;
+  padding: 4px 2px;
+  border-bottom: 1px solid #3a4260;
+}
+
+/* --- Day header --- */
+.schedule-grid__day-header {
+  background: #1a1d23;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 4px 0;
+  min-width: 32px;
+  width: 32px;
+  line-height: 1.2;
+  display: table-cell;
+}
+
+.schedule-grid__day-num {
+  display: block;
+  color: #475569;
+  font-weight: 400;
+  font-size: 0.65rem;
+}
+
+/* --- Body rows --- */
+.schedule-grid__row {
+  td {
+    height: 36px;
+  }
+  &:hover td {
+    background: rgba(99, 102, 241, 0.06) !important;
+  }
+}
+
+.schedule-grid__row--even td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* --- Critical items: highlight the start/end date cells only --- */
+.schedule-grid__date-col--critical {
+  background: rgba(239, 68, 68, 0.22) !important;
+
+  .schedule-date-input {
+    color: #fca5a5;
+    font-weight: 700;
+  }
+}
+
+.schedule-grid__item-name {
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  cursor: default;
+}
+
+/* --- Gantt cells --- */
+.schedule-grid__cell {
+  width: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  height: 36px;
+  padding: 0;
+  position: relative;
+  cursor: default;
+}
+
+.schedule-grid__cell--active {
+  background: linear-gradient(180deg, #6366f1 0%, #4f46e5 100%) !important;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+
+  &:hover {
+    filter: brightness(1.25);
+  }
+}
+
+.schedule-grid__cell--critical {
+  background: linear-gradient(180deg, #f87171 0%, #dc2626 100%) !important;
+}
+
+.schedule-grid__cell--first {
+  border-left: 2px solid #818cf8 !important;
+  border-radius: 4px 0 0 4px;
+}
+
+.schedule-grid__cell--last {
+  border-right: 2px solid #818cf8 !important;
+  border-radius: 0 4px 4px 0;
+}
+
+.schedule-grid__bar-label {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #e0e7ff;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* --- Info columns --- */
+.schedule-grid__hours {
+  display: table-cell;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center !important;
+  padding: 4px 6px !important;
+}
+
+.schedule-grid__total-days {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a5b4fc;
+}
+
+.schedule-grid__total-hours {
+  display: block;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* --- Date/Number inputs inside cells --- */
+.schedule-date-input,
+.schedule-days-input {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  padding: 2px 4px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  &:hover,
+  &:focus {
+    background: rgba(99, 102, 241, 0.12);
+    border-color: #4f46e5;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(1) opacity(0.5);
+    width: 12px;
+    height: 12px;
+  }
+
+  &::-webkit-inner-spin-button {
+    opacity: 0.4;
+  }
+}
+
+.schedule-days-input {
+  width: 100%;
+  text-align: center;
+}
+
+.schedule-critical-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #ef4444;
+  cursor: pointer;
+}
+
+/* ============================================================
+   Tooltip
+   ============================================================ */
+.schedule-tooltip {
+  padding: 4px 2px;
+}
+
+.schedule-tooltip__name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #e0e7ff;
+  margin-bottom: 4px;
+}
+
+.schedule-tooltip__description {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  max-width: 220px;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.schedule-tooltip__dates {
+  font-size: 0.72rem;
+  color: #a5b4fc;
+  margin-bottom: 2px;
+}
+
+.schedule-tooltip__days {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+/* ============================================================
+   Dialog Actions
+   ============================================================ */
+.schedule-dialog-paper .MuiDialogActions-root {
+  border-top: 1px solid #2d3548;
+  background: #1e2330;
+  padding: 8px 16px;
+}

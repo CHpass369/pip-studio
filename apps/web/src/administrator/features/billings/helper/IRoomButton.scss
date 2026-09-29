@@ -1,0 +1,25 @@
+.helper-room-button {
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+  font-size: 30px;
+  padding: 15px 10px 10px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.helper-room-button.color-warn {
+  background-color: #c9b93e;
+}
+.helper-room-button.color-teal {
+  background-color: #00b5ad;
+}
+.helper-room-button.color-green {
+  background-color: #17c207;
+}
+.helper-room-button.color-gray {
+  background-color: #5b5b5b83;
+}
+.helper-room-button.color-light-blue {
+  background-color: #03c9c9e8;
+}

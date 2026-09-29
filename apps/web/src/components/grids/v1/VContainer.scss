@@ -1,0 +1,28 @@
+.v-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.v-content {
+  overflow-y: auto;
+  flex: 1;
+}
+.v-flex {
+  overflow-y: auto;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .v-flex-mobile {
+    display: block;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1008px) {
+  .v-flex-computer {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1008px) {
+  .v-flex-screen {
+    display: block;
+  }
+}

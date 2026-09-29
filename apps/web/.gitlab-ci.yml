@@ -1,0 +1,55 @@
+stages:
+  - compile
+  - build
+  - deploy
+
+variables:
+  SERVER_NAME: "web-constructor"
+  SERVER_PORT: "20018"
+  SERVICE_NAME: "web_constructor"
+
+compile:
+  image: node:23-alpine
+  stage: compile
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+  only:
+    - develop
+  tags:
+    - gitlab-org-docker
+
+build:
+  stage: build
+  script:
+    - docker build -t $SERVER_NAME .
+  only:
+    - develop
+  tags:
+    - gams-s
+
+deploy:
+  stage: deploy
+  script:
+    - docker stop $SERVER_NAME
+    - docker rm $SERVER_NAME
+    - cd ~/constructor
+    - docker-compose up -d $SERVICE_NAME
+  only:
+    - develop
+  tags:
+    - gams-s
+
+start:
+  stage: deploy
+  script:
+    - cd ~/constructor
+    - docker-compose up -d $SERVICE_NAME
+  only:
+    - develop
+  tags:
+    - gams-s
+  when: manual

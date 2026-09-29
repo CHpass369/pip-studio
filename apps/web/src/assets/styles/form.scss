@@ -1,0 +1,12 @@
+.form-base {
+  .quantity-input {
+    font: inherit;
+    color: inherit;
+    background-color: #0006;
+    border: none;
+    border-radius: 5px;
+    width: 95%;
+    padding: 2px 2px;
+    transition: all .5s ease-in-out;
+  }
+}

@@ -1,0 +1,40 @@
+.grid-4-row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+.grid-4-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.grid-4-flex {
+  overflow-y: auto;
+  display: none;
+}
+.grid-4-start {
+  text-align: start;
+}
+.grid-4-center {
+  text-align: center;
+}
+.grid-4-end {
+  text-align: end;
+}
+@media only print, screen and (max-width: 768px) {
+  .grid-4-flex-mobile {
+    display: block;
+  }
+}
+@media only print, screen and (min-width: 769px) and (max-width: 1008px) {
+  .grid-4-flex-computer {
+    display: block;
+  }
+}
+@media only print, screen and (min-width: 1008px) {
+  .grid-4-flex-screen {
+    display: block;
+  }
+}

@@ -1,0 +1,9 @@
+.v-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.v-container-content {
+  overflow-y: auto;
+  flex: 1;
+}

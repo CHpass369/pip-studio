@@ -1,0 +1,9 @@
+.h-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.h-container-content {
+  overflow-y: auto;
+  flex: 1;
+}

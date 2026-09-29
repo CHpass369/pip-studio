@@ -1,0 +1,25 @@
+.area-selector {
+  margin-right: 12px;
+  color: rgb(255, 255, 255);
+  max-width: 100%;
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.315);
+  }
+
+  .MuiSvgIcon-root {
+    color: rgb(255, 255, 255);
+  }
+}
+
+@media (max-width: 480px) {
+  .area-selector {
+    max-width: 40vw;
+
+    .MuiSelect-select {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

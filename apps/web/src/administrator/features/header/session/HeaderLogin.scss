@@ -1,0 +1,34 @@
+.login-information {
+  background-color: rgba(0, 0, 0, 0.315);
+  margin-right: 12px;
+  margin-right: 12px;
+  border-radius: 19px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  div {
+    float: left;
+    display: inherit;
+  }
+  img {
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+  }
+  h4 {
+    display: inline;
+    margin: 0px;
+    padding: 3px 12px;
+    font-size: 22px;
+    max-width: 40vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-information h4 {
+    display: none;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "develop": {
+    "mongo": {
+      "name": "server-constructor",
+      "path": "mongodb://localhost:27017"
+    },
+    "mqtt": {
+      "path": "mqtt://0.0.0.0:1883",
+      "username": "basic",
+      "password": "basic"
+    },
+    "port": "10018",
+    "secret": "basic-secret-messages"
+  },
+  "production": {
+    "mongo": {
+      "name": "server-constructor",
+      "path": "mongodb://basic:basic@server-mongo:27017"
+    },
+    "mqtt": {
+      "path": "mqtt://server-mosquitto:1883",
+      "username": "basic",
+      "password": "basic"
+    },
+    "port": "10018",
+    "secret": "basic-secret-messages"
+  }
+}

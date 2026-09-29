@@ -1,0 +1,21 @@
+.summary-btn {
+  background: rgba(0, 0, 0, 0.171);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.summary-btn:hover, .summary-btn-select {
+  background: rgba(90, 90, 90, 0.171);
+}
+
+.summary-btn-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.summary-btn-disabled:hover {
+  background: rgba(0, 0, 0, 0.171);
+}

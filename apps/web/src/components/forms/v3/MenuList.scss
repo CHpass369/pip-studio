@@ -1,0 +1,25 @@
+.toolbar-list {
+  padding: 0px;
+  font-size: 1.2em;
+  .toolbar-list-item {
+    padding: 10px;
+    color: rgb(223, 223, 223);
+    display: flex;
+  }
+  .item-icon {
+    float: left;
+  }
+  .item-label {
+    float: left;
+    padding-top: 4px;
+    padding-left: 15px;
+  }
+  .active {
+    border-left-style: solid;
+    color: rgb(255, 255, 255);
+  }
+  .toolbar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.171);
+    color: rgb(255, 255, 255) !important;
+  }
+}
